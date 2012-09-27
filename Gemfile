@@ -1,70 +1,38 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.2.0'
+# Bundle edge Rails
+gem 'rails', github: 'rails/rails'
+gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
+gem 'journey', github: 'rails/journey'
+
+gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.0'
-  gem 'coffee-rails', '~> 3.2.0'
-  gem 'uglifier',     '>= 1.0.3'
-end
+  gem 'sprockets-rails', github: 'rails/sprockets-rails'
+  gem 'sass-rails', github: 'rails/sass-rails'
+  gem 'coffee-rails', github: 'rails/coffee-rails'
 
-gem 'coffee-filter'
-gem 'haml_coffee_assets'
-gem 'execjs'
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', platforms: :ruby
+
+  gem 'uglifier', '>= 1.0.3'
+end
 
 gem 'jquery-rails'
-gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
-gem 'mongoid', '3.0.0.rc'
-gem 'moped', '1.0.0.rc'
-gem 'rails3-generators'
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
 
-gem 'haml'
-gem 'haml-rails'
-gem 'aws-s3'
-gem 'mongoid-paperclip', require: 'mongoid_paperclip'
-gem 'dynamic_form'
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
 
-gem 'therubyracer'
+# Use unicorn as the app server
+# gem 'unicorn'
 
-gem 'omniauth' # It's a sane default these days
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-dwolla'
+# Deploy with Capistrano
+# gem 'capistrano', group: :development
 
-gem 'braintree'
-
-gem 'airbrake'
-
-group :production do
-  gem 'thin'
-end
-
-group :development do
-  gem 'heroku'
-  gem 'taps'
-  gem 'thin'
-end
-
-group :test, :development do
-  gem 'ruby-debug19', require: 'ruby-debug'
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'mongoid-rspec'
-  gem 'timecop'
-  gem 'vcr'
-  gem 'fakeweb'
-  gem 'email_spec' 
-  gem 'rack_session_access'
-  gem 'pry'
-  gem 'pry-nav'
-
-  # Pretty printed test output
-  gem 'turn', require: false
-end
-
+# To use debugger
+# gem 'debugger'

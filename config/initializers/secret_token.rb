@@ -2,6 +2,11 @@
 
 # Your secret key for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
+
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-RebelFoundation::Application.config.secret_token = '033ff315c0888603198e35022abb20397b91d0bcd0cf78a50af0079b362918fbefebfbfc98b9dfc67566fb1952f81218789e9b94b315b225850a75290f47cb35'
+# You can use `rake secret` to generate a secure secret key.
+
+# Make sure your secret_token is kept private
+# if you're sharing your code publicly.
+TheForge::Application.config.secret_token = '4a49c2c26c3cd33ad160f0e9f5d0c7e423a386c28d504cd5d36c727020241dd33aef589c00e495f2a78e5c2880df7e60a7b7b8978c502e9251eeffb4330a9480'

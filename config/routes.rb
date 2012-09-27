@@ -1,62 +1,55 @@
-RebelFoundation::Application.routes.draw do
+TheForge::Application.routes.draw do
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
 
-  # Users
-  resources :users do
-    resources :transactions, controller: 'users/transactions'
-    resources :accounts, controller: 'users/accounts' do
-      resources :orders, controller: 'users/accounts/orders' do
-        member do
-          get :process
-          get :transfer
-          get :funded
-        end
-      end
-    end
-    resources :providers, controller: 'users/providers' do
-      get :update
-      get :destroy
-    end
-    resources :posts, controller: 'users/posts' do
-      collection do
-        get :drafts
-      end
-      member do
-        get :publish
-      end
-    end
-  end
-  resources :projects do
-    resources :transactions, controller: 'projects/transactions'
-    resources :epics, controller: 'projects/epics' do
-      resources :stories, controller: 'projects/epics/stories' do
-        member do
-          get :start
-          get :finish
-          get :deliver
-          get :deny
-          put :denied
-          get :accept
-          get :restart
-        end
-        resources :tasks, controller: 'projects/epics/stories/tasks'
-        resource :account, controller: 'projects/epics/stories/accounts' do
-          resources :transactions, controller: 'projects/epics/stories/accounts/transactions'
-        end
-      end
-    end
-    resources :users, controller: 'projects/users'
-  end
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  # root to: 'welcome#index'
 
-  # Applies to the logged in user
-  match '/dashboard' => 'users#dashboard', as: :dashboard
-  match '/profile'   => 'users#edit',      as: :profile
+  # Sample of regular route:
+  #   get 'products/:id' => 'catalog#view'
+  # Keep in mind you can assign values other than :controller and :action.
 
-  # Session
-  resource  :session
-  match '/logout' => 'session#destroy', as: :logout
+  # Sample of named route:
+  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # This route can be invoked with purchase_url(id: product.id).
 
-  # OAuth how you humor me so ...
-  match '/auth/:provider/callback' => 'session#create'
-  
-  root to: 'homepages#index'
+  # Sample resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
+
+  # Sample resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
+
+  # Sample resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
+  # Sample resource route with more complex sub-resources:
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', on: :collection
+  #     end
+  #   end
+
+  # Sample resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
+
+
+  # See how all your routes lay out with "rake routes".
 end
