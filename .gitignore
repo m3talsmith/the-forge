@@ -2,3 +2,6 @@
 *.swn
 *.swo
 .DS_Store
+npm-debug.log
+node_modules
+.c9revisions
