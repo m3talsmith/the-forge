@@ -1,9 +1,0 @@
-{
-  "name": "the-forge",
-  "description": "The Forge is about building a community of decentralized professionals and apprentices alike, who can work together in an agile manner, on a variety of projects. It will provide the tools to track all the various bits of projects, user stories, tasks, resouce management, budget constraints, etc. , and provide for project funding, escrow, and developer payment.",
-  "author": "Michael Christenson II, Bryan Denslow, and Michael Hoskins",
-  "version": "0.0.1dev1",
-  "dependencies": {
-    "mongodb": "*"
-  }
-}
